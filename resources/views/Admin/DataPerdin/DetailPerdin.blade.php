@@ -8,7 +8,7 @@
                 <div class="card overflow-hidden">
                         <div class="card-body p-4">
                             <h6 class="card-title mb-9 fw-semibold">Detail Perjalanan Dinas</h6>
-                            <a href="" class="btn btn-primary">Download PDF</a>
+                            <a href="{{ route('generate.pdf', ['id' => $perjalanan->id]) }}" class="btn btn-primary" class="btn btn-primary">Download PDF</a>
 
                             <div class="row">
                                 <div class="col">
