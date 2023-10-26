@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cetak Transaksi</title>
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/css/adminlte.min.css') }}">
     <style>
         .container {
             max-width: 800px;
@@ -94,8 +93,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>{{ $perjalanan->user ? $perjalanan->user->name : 'Nama Pegawai Tidak Ditemukan' }}</td>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $perjalanan->user->name}}</td>
                             <td>{{ $perjalanan->kotaasal }}</td>
                             <td>{{ $perjalanan->kotatujuan }}</td>
                             <td>{{ $perjalanan->tanggalberangkat }}</td>
@@ -124,7 +123,6 @@
                 <br>
                 <br>
                 <br>
-                <p>{{ $perjalanan->admin->name }}</p>
             </div>
         </div>
     </div>

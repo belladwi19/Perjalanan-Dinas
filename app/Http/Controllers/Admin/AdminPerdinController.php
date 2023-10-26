@@ -17,6 +17,7 @@ class AdminPerdinController extends Controller
         $perjalanan = Perjalanan::with(['user'])->findOrFail($id);
 
         $pdf = PDF::loadView('Admin.DataPerdin.pdf', compact('perjalanan'));
+        $pdf->setPaper('a4', 'landscape');
 
         $headers = [
             'Content-Type' => 'application/pdf',
