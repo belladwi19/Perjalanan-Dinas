@@ -36,6 +36,9 @@ Auth::routes();
 Route::get('auth/redirect', [LoginController::class, 'redirectToGoogle']);
 Route::get('auth/callback', [LoginController::class, 'handleGoogleCallback']);
 
+Route::get('auth/redirect/facebook', [LoginController::class, 'redirectToFacebook']);
+Route::get('facebook/redirect', [LoginController::class, 'handleFacebookCallback']);
+
 Route::middleware(['auth', 'isAdmin:0'])->group(function () {
     Route::get('/home', [AdminHomeController::class, 'index'])->name('admin.home');
     

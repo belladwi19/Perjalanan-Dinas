@@ -63,7 +63,7 @@
                   </a>
                   </div>
                   <div class="justify-content-center align-items-center d-flex">
-                  <a href="" class="btn btn-facebook">
+                  <a href="{{ '/auth/redirect/facebook'}}" class="btn btn-facebook">
                     <i class="fab fa-facebook"></i> Login with Facebook
                   </a>
                   </div>
