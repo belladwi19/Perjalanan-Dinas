@@ -53,7 +53,7 @@ Route::middleware(['auth', 'isAdmin:0'])->group(function () {
 
     Route::get('/dataperdin',  [AdminPerdinController::class, 'index'])->name('dataperdin');
     Route::get('/detailperdin/{id}',  [AdminPerdinController::class, 'detail'])->name('detailperdin');
-    Route::get('/searchperdin', [AdminPerdinController::class, 'search'])->name('search.dataperdin');
+    Route::get('/searchperdin', [AdminPerdinController::class, 'searchperdin'])->name('searchperdin.dataperdin');
 });
   
 /*------------------------------------------

@@ -35,7 +35,9 @@ class AdminPerdinController extends Controller
     {
         $searchperdin = $request->get('searchperdin');
         $perjalanan = Perjalanan::where('kotaasal', 'like', '%'.$searchperdin.'%')
-        ->where('name', 'like', '%'.$searchperdin.'%')
+        ->orWhereHas('user', function ($query) use ($searchperdin) {
+            $query->where('name', 'like', '%'.$searchperdin.'%');
+        })
         ->paginate(7);
 
         return view('Admin.DataPerdin.DataPerdin', compact('perjalanan'));
