@@ -30,4 +30,14 @@ class AdminPerdinController extends Controller
 
         return view('Admin.DataPerdin.DetailPerdin', compact('perjalanan') );
     }
+
+    public function searchperdin(Request $request)
+    {
+        $searchperdin = $request->get('searchperdin');
+        $perjalanan = Perjalanan::where('kotaasal', 'like', '%'.$searchperdin.'%')
+        ->where('name', 'like', '%'.$searchperdin.'%')
+        ->paginate(7);
+
+        return view('Admin.DataPerdin.DataPerdin', compact('perjalanan'));
+    }
 }
