@@ -99,6 +99,8 @@ class AdminKotaController extends Controller
     {
         $searchkota = $request->get('searchkota');
         $kota = Kota::where('namakota', 'like', '%'.$searchkota.'%')
+            ->orWhere('provinsi', '', '%'.$searchkota.'%')
+            ->orWhere('pulau', '', '%'.$searchkota.'%')
             ->paginate(7);
 
         return view('Admin.DataKota.DataKota', compact('kota'));
