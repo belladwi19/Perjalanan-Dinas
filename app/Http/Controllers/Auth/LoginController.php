@@ -120,7 +120,7 @@ class LoginController extends Controller
             if ($user != null) {
                 Auth::login($user);
                 $request->session()->put('user', $user);
-                return redirect()->route('home.index');
+                return redirect()->route('admin.home');
             } else {
                 User::create([
                     'email'             => $user_facebook->getEmail(),
@@ -131,7 +131,7 @@ class LoginController extends Controller
 
                 $user = Auth::user();
                 $request->session()->put('user', $user);
-                return redirect()->route('home.index');
+                return redirect()->route('admin.home');
             }
         } catch (Exception $e) {
             dd($e->getMessage());
