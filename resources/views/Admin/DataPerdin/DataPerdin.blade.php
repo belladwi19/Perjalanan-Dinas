@@ -6,6 +6,17 @@
                 <div class="card overflow-hidden">
                   <div class="card-body p-4">
                     <h5 class="card-title  fw-semibold">Perjalanan Dinas</h5>
+                    <div class="d-grid gap-2">
+                  <form action="" method="" class="form-inline my-2 my-lg-0">
+                    <div class="d-flex justify-content-end">
+                      <div class="input-group " style="width: 300px;">
+                          <input class="form-control" type="search" name="searchperdin" placeholder="Cari perjalanan dinas" aria-label="Search">
+                          <button class="btn btn-secondary" type="submit">Cari</button>
+                      </div>
+                    </div>
+                  </form>
+                  
+                </div>
                     <div class="table-responsive">
                   <table class="table text-nowrap mb-4 align-middle">
                     <thead class="text-dark fs-4">
