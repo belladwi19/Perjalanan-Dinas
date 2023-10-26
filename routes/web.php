@@ -48,6 +48,7 @@ Route::middleware(['auth', 'isAdmin:0'])->group(function () {
     Route::get('/deletekota/{id}', [AdminKotaController::class, 'delete'])->name('deletekota');
     Route::get('/showkota/{id}', [AdminKotaController::class, 'show'])->name('showkota');
     Route::post('/updatekota/{id}', [AdminKotaController::class, 'update'])->name('updatekota');
+    Route::get('/search', [AdminKotaController::class, 'search'])->name('search.datakota');
 
     Route::get('/dataperdin',  [AdminPerdinController::class, 'index'])->name('dataperdin');
     Route::get('/detailperdin/{id}',  [AdminPerdinController::class, 'detail'])->name('detailperdin');

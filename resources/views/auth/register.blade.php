@@ -23,17 +23,17 @@
                 <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
                   <img src="../images/logos/logo.webp" width="180" alt="">
                 </a>
-                <form>
+                <form method="GET" action="{{ route('register') }}">
                 @csrf
                   <div class="mb-3">
                     <label for="exampleInputtext1" class="form-label">Name</label>
-                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"  autofocus>
+                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" autofocus>
 
-                              
+                                
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email Address</label>
-                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" >
+                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
 
                                 
                   </div>
@@ -41,7 +41,7 @@
                     <label for="exampleInputPassword1" class="form-label">Password</label>
                     <input id="password" type="password" class="form-control" name="password">
 
-                                
+                               
                   </div>
                   <div class="mb-4">
                     <label for="exampleConfirmInputPassword1" class="form-label">Confirm Password</label>
