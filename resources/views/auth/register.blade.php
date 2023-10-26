@@ -23,7 +23,7 @@
                 <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
                   <img src="../images/logos/logo.webp" width="180" alt="">
                 </a>
-                <form method="GET" action="{{ route('register') }}">
+                <form method="POST" action="{{ route('register') }}">
                 @csrf
                   <div class="mb-3">
                     <label for="exampleInputtext1" class="form-label">Name</label>
