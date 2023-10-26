@@ -33,6 +33,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('auth/redirect', [LoginController::class, 'redirectToGoogle']);
+Route::get('auth/callback', [LoginController::class, 'handleGoogleCallback']);
+
 Route::middleware(['auth', 'isAdmin:0'])->group(function () {
     Route::get('/home', [AdminHomeController::class, 'index'])->name('admin.home');
     
@@ -54,6 +57,7 @@ Route::middleware(['auth', 'isAdmin:0'])->group(function () {
     Route::get('/dataperdin',  [AdminPerdinController::class, 'index'])->name('dataperdin');
     Route::get('/detailperdin/{id}',  [AdminPerdinController::class, 'detail'])->name('detailperdin');
     Route::get('/searchperdin', [AdminPerdinController::class, 'searchperdin'])->name('searchperdin.dataperdin');
+    Route::get('/generate-pdf/{id}', [AdminPerdinController::class, 'generatePDF'])->name('generate.pdf');
 });
   
 /*------------------------------------------
