@@ -8,6 +8,8 @@
                 <div class="card overflow-hidden">
                         <div class="card-body p-4">
                             <h6 class="card-title mb-9 fw-semibold">Detail Perjalanan Dinas</h6>
+                            <a href="" class="btn btn-primary">Download PDF</a>
+
                             <div class="row">
                                 <div class="col">
                                     <label for="inputEmail4" class="form-label">Nama Pegawai</label>
