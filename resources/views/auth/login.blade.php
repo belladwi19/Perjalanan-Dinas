@@ -58,6 +58,11 @@
                   </div>
                   <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">{{ __('Login') }}</button>
                   
+                  <div class="justify-content-center align-items-center d-flex">
+                  <a href="" class="btn btn-google">
+                    <i class="fab fa-google"></i> Login with Google
+                  </a>
+                  </div>
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="fs-4 mb-0 fw-bold">New to Modernize?</p>
                     
