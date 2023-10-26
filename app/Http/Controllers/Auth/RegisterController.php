@@ -52,9 +52,17 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string'],
             'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string', 'min:8', 'confirmed', 'different:name'],
+            'password' => [
+                'required',
+                'string',
+                'min:8',
+                'confirmed',
+                'different:name',
+                'regex:/^(?=.*[A-Z])(?=.*[0-9])/',
+            ],
         ], [
             'password.different' => 'Password must be different from the name.',
+            'password.regex' => 'Password must contain at least one uppercase letter and one number.',
         ]);
     }
 

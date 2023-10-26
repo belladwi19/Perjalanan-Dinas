@@ -35,10 +35,14 @@ class AdminPerdinController extends Controller
     {
         $searchperdin = $request->get('searchperdin');
         $perjalanan = Perjalanan::where('kotaasal', 'like', '%'.$searchperdin.'%')
-        ->orWhereHas('user', function ($query) use ($searchperdin) {
-            $query->where('name', 'like', '%'.$searchperdin.'%');
-        })
-        ->paginate(7);
+            ->orWhere('kotatujuan', 'like', '%'.$searchperdin.'%')
+            ->orWhere('Status', 'like', '%'.$searchperdin.'%')
+            ->orWhere('durasi', 'like', '%'.$searchperdin.'%')
+            ->orWhere('keterangan', 'like', '%'.$searchperdin.'%')
+            ->orWhereHas('user', function ($query) use ($searchperdin) {
+                $query->where('name', 'like', '%'.$searchperdin.'%');
+            })
+            ->paginate(7);
 
         return view('Admin.DataPerdin.DataPerdin', compact('perjalanan'));
     }

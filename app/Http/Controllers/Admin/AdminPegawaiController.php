@@ -88,6 +88,7 @@ class AdminPegawaiController extends Controller
         $searchpegawai = $request->get('searchpegawai');
         $user = User::with(['pegawai'])
             ->where('name', 'like', '%'.$searchpegawai.'%')
+            ->orWhere('email', 'like', '%'.$searchpegawai.'%')
             ->paginate(7);
 
         return view('Admin.DataPegawai.DataPegawai', compact('user'));
