@@ -16,19 +16,13 @@ class AdminPerdinController extends Controller
     {
         $perjalanan = Perjalanan::with(['user'])->findOrFail($id);
 
-        // Capture the specific content section from the view
-        $content = View::make('Admin.DataPerdin.DetailPerdin', compact('perjalanan'))->renderSections()['content'];
+        $pdf = PDF::loadView('Admin.DataPerdin.pdf', compact('perjalanan'));
 
-        // Create a PDF with the captured content
-        $pdf = PDF::loadHTML($content);
-
-        // Set headers for the PDF response
         $headers = [
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'inline; filename="detail_perjalanan_dinas.pdf"',
         ];
 
-        // Stream the PDF response to the user with headers
         return response()->stream(
             function () use ($pdf) {
                 echo $pdf->stream();
