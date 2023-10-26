@@ -62,6 +62,11 @@
                     <i class="fab fa-google"></i> Login with Google
                   </a>
                   </div>
+                  <div class="justify-content-center align-items-center d-flex">
+                  <a href="" class="btn btn-facebook">
+                    <i class="fab fa-facebook"></i> Login with Facebook
+                  </a>
+                  </div>
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="fs-4 mb-0 fw-bold">New to Modernize?</p>
                     
